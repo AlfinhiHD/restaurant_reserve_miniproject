@@ -1,18 +1,18 @@
-#inputfield input {
+#textarea textarea {
     width: 367px;
     height: 46px;
     background: #FFF0DE;
     border: 1px solid #000000;
-    border-radius: 100px;
+    border-radius: 15px;
     padding-left: 15px;
 }
 
-#inputfield input:focus {
+#textarea textarea:focus {
     outline: none;
 }
 
 
-#inputfield label {
+#textarea label {
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
