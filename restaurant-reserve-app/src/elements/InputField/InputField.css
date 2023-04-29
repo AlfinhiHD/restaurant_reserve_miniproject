@@ -1,0 +1,21 @@
+#inputfield input {
+    width: 367px;
+    height: 46px;
+    background: #FFF0DE;
+    border: 1px solid #000000;
+    border-radius: 100px;
+    padding-left: 10px;
+}
+
+#inputfield input:focus {
+    outline: none;
+}
+
+
+#inputfield label {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+
+    color: #000000;
+}
