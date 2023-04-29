@@ -1,0 +1,18 @@
+#footeritem h5 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 16px;
+
+    color: #B1464A;
+}
+
+#footeritem a {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    text-decoration: none;
+
+    color: #000000 !important;
+
+}

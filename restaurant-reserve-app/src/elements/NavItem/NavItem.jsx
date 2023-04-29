@@ -2,7 +2,7 @@ import './NavItem.css'
 
 const NavItem = (props) => {
     return (
-        <a
+        <a id='navitem'
             className={props.className}
             href={props.href}
         >{props.label}</a>

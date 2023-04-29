@@ -17,8 +17,8 @@ const NavbarLanding = () => {
                             className="ms-3 mt-1"
                         />
                     </a>
-                    <div class="d-flex justify-content-end">
-                        <ul class="navbar-nav">
+                    <div className="d-flex justify-content-end">
+                        <ul className="navbar-nav">
                             <li className="nav-item me-4">
                                 <NavItem className="nav-link" href="#" label="About Us" />
                             </li>

@@ -1,0 +1,8 @@
+#linkbutton img {
+    width: 30px;
+    height: 30px;
+}
+
+#linkbutton a {
+    margin-right: 20px;
+}
