@@ -3,11 +3,12 @@ import "./InputField.css"
 const InputField = (props) => {
     return (
         <div id="inputfield">
-            <label className="mb-2" htmlFor={props.htmlFor}>
+            <label className="form-label mb-2" htmlFor={props.htmlFor}>
                 {props.label}
             </label>
             <br/>
             <input
+                className="form-control"
                 type={props.type}
                 id={props.id}
                 name={props.name}

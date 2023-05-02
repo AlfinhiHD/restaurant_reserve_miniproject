@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import ErrorPage from './pages/ErrorPage/ErrorPage'
 import LoginPage from './pages/LoginPage/LoginPage'
 import RegisterPage from './pages/RegisterPage/RegisterPage';
+import OnLogin from './templates/OnLogin/OnLogin';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="/getstarted" element={<CreateProduct />} />
             <Route path="/detailproduct/:productId" element={<DetailProduct />} /> */}
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/" element={<OnLogin />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>

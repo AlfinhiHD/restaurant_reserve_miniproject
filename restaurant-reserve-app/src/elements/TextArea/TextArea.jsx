@@ -3,11 +3,12 @@ import "./TextArea.css"
 const TextArea = (props) => {
     return (
         <div id="textarea">
-            <label className="mb-2" htmlFor={props.htmlFor}>
+            <label className="form-label mb-2" htmlFor={props.htmlFor}>
                 {props.label}
             </label>
             <br />
             <textarea
+                className="form-control"
                 rows={props.rows}
                 type={props.type}
                 id={props.id}

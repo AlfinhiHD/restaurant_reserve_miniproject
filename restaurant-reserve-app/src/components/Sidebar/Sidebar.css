@@ -1,0 +1,33 @@
+.sidebar h3 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 58px;
+
+    color: #000000;
+}
+
+.list-group-item:first-child {
+    border-radius: 0;
+}
+
+.list-group-item {
+    border: none;
+    border-radius: 0;
+    background-color: #FFF0DE;
+}
+
+.list-group-item.active {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+.sidebar a {
+    font-family: 'Kaisei Opti';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+
+    color: #000000;
+
+}

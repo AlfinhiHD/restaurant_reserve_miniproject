@@ -18,7 +18,7 @@ const RegisterPage = () => {
                     <form className="mt-5">
                     <div className="ms-4">
                             <InputField
-                                label="Address"
+                                label="Username"
                                 htmlFor="username"
 
                                 type="text"
@@ -63,6 +63,7 @@ const RegisterPage = () => {
                             <TextArea
                                 label="Address"
                                 htmlFor="address"
+                                style={{  }}
 
                                 rows="3"
                                 type="text"
