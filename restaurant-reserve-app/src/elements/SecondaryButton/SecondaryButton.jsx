@@ -1,8 +1,8 @@
-import "./PrimaryButton.css"
+import "./SecondaryButton.css"
 
-const PrimaryButton = (props) => {
+const SecondaryButton = (props) => {
     return (
-        <div id="primarybutton">
+        <div id="secondarybutton">
             <button
                 style={{ width: props.width, height: props.height, fontSize: props.fontsize }}
                 type={props.type}
@@ -12,4 +12,4 @@ const PrimaryButton = (props) => {
     )
 }
 
-export default PrimaryButton
+export default SecondaryButton

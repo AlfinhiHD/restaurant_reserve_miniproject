@@ -1,6 +1,7 @@
 import NavbarOnLogin from "../../components/NavbarOnLogin/NavbarOnLogin"
 import Sidebar from "../../components/Sidebar/Sidebar"
 import Dashboard from "../../pages/Dashboard/Dashboard"
+import DashboardDetails from "../../pages/DashboardDetails/DashboardDetails"
 import DashboardOnReserve from "../../pages/DashboardOnReserve/DashboardOnReserve"
 
 const OnLogin = () => {
@@ -17,7 +18,7 @@ const OnLogin = () => {
                         <div className="col-md-9">
                             <div className="content p-3"
                             style={{ height: 600, backgroundColor: "#FFF0DE", borderRadius:"50px" }}>
-                                <DashboardOnReserve/>
+                                <DashboardDetails/>
                             </div>
                         </div>
                     </div>

@@ -19,9 +19,6 @@ function App() {
       
       <Router>
           <Routes>
-            {/* <Route exact path="/" element={<LandingPage />} />
-            <Route path="/getstarted" element={<CreateProduct />} />
-            <Route path="/detailproduct/:productId" element={<DetailProduct />} /> */}
             <Route path="/login" element={<LoginPage />} />
             <Route path="/" element={<OnLogin />} />
             <Route path="/register" element={<RegisterPage />} />
