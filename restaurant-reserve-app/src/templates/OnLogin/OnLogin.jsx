@@ -6,6 +6,7 @@ import DashboardOnReserve from "../../pages/DashboardOnReserve/DashboardOnReserv
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ErrorPage from "../../pages/ErrorPage/ErrorPage"
 import ReserveSuccess from "../../pages/ReserveSuccess/ReserveSuccess"
+import MenuPage from "../../pages/MenuPage/MenuPage"
 
 const OnLogin = () => {
     return (
@@ -27,6 +28,8 @@ const OnLogin = () => {
                                         <Route path="/dashboarddetails" element={<DashboardDetails />} />
                                         <Route path="/dashboardonreserve" element={<DashboardOnReserve />} />
                                         <Route path="/reservesuccess" element={<ReserveSuccess/>} />
+                                        <Route path="/menu" element={<MenuPage/>} />
+
                                     </Routes>
                                 </Router>
                             </div>

@@ -1,0 +1,24 @@
+#inputred input {
+
+    width: 247px;
+    height: 30px;
+
+    background: #B1464A;
+    border: 1px solid #FFFFFF;
+    border-radius: 120px;
+    color: #FFF0DE;
+}
+
+#inputred input:focus {
+    outline: none;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+#inputred input::placeholder {
+    color: #FFF0DE;
+    font-size: 14px;
+    font-style: italic;
+    opacity: 0.5;
+
+}

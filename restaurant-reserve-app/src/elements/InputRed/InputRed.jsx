@@ -1,12 +1,8 @@
-import "./InputField.css"
+import "./InputRed.css"
 
-const InputField = (props) => {
+const InputRed = (props) => {
     return (
-        <div id="inputfield">
-            <label className="form-label mb-2" htmlFor={props.htmlFor}>
-                {props.label}
-            </label>
-            <br/>
+        <div id="inputred">
             <input
                 className="form-control"
                 type={props.type}
@@ -17,8 +13,9 @@ const InputField = (props) => {
                 onChange={props.onChange}
                 onBlur={props.onBlur}
                 inputclass={props.inputclass}
+                placeholder="Search by name"
             />
         </div>
     )
 }
-export default InputField
+export default InputRed
