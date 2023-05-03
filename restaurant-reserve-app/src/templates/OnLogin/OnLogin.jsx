@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ErrorPage from "../../pages/ErrorPage/ErrorPage"
 import ReserveSuccess from "../../pages/ReserveSuccess/ReserveSuccess"
 import MenuPage from "../../pages/MenuPage/MenuPage"
+import ReserveFormPage from "../../pages/ReserveFormPage/ReserveFormPage"
+import ConfirmationPage from "../../pages/ConfirmationPage/ConfirmationPage"
 
 const OnLogin = () => {
     return (
@@ -27,7 +29,9 @@ const OnLogin = () => {
                                         <Route path="/dashboard" element={<Dashboard />} />
                                         <Route path="/dashboarddetails" element={<DashboardDetails />} />
                                         <Route path="/dashboardonreserve" element={<DashboardOnReserve />} />
-                                        <Route path="/reservesuccess" element={<ReserveSuccess/>} />
+                                        <Route path="/reservesuccess" element={<ReserveSuccess />} />
+                                        <Route path="/reserveform" element={<ReserveFormPage />} />
+                                        <Route path="/confirmation" element={<ConfirmationPage />} />
                                         <Route path="/menu" element={<MenuPage/>} />
 
                                     </Routes>

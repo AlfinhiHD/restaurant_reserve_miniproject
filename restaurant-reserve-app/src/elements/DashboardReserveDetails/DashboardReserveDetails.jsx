@@ -44,7 +44,7 @@ const DashboardReserveDetails = (props) => {
                             <p>Crab Sushi - 10pcs</p>
                             <p>Crab Sushi - 10pcs</p>
                         </div>
-                        <div className="mt-5 d-flex justify-content-between">
+                        <div className="mt-5 d-flex">
                             <PrimaryButton
                                 className="button me-5"
                                 label="Reschedule"

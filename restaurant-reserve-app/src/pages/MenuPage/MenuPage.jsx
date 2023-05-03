@@ -4,7 +4,8 @@ import InputRed from "../../elements/InputRed/InputRed"
 import MenuCard from "../../elements/MenuCard/MenuCard"
 import MenuSelect from "../../elements/MenuSelect/MenuSelect"
 import PrimaryButton from "../../elements/PrimaryButton/PrimaryButton"
-import Cart from "../Cart/Cart"
+import Cart from "../../elements/Cart/Cart"
+
 import Pagination from "../Pagination/Pagination"
 
 const MenuPage = () => {
