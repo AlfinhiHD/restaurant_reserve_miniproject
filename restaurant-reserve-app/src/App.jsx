@@ -8,6 +8,7 @@ import ErrorPage from './pages/ErrorPage/ErrorPage'
 import LoginPage from './pages/LoginPage/LoginPage'
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 import OnLogin from './templates/OnLogin/OnLogin';
+import OffLogin from './templates/OffLogin/OffLogin';
 
 function App() {
 
@@ -17,14 +18,16 @@ function App() {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&display=swap" rel="stylesheet"/>
       
-      <Router>
+      {/* <OffLogin /> */}
+      <OnLogin />
+      {/* <Router>
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/" element={<OnLogin />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
-      </Router>
+      </Router> */}
     </>
     
   )

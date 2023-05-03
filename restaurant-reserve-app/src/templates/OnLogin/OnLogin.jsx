@@ -3,6 +3,9 @@ import Sidebar from "../../components/Sidebar/Sidebar"
 import Dashboard from "../../pages/Dashboard/Dashboard"
 import DashboardDetails from "../../pages/DashboardDetails/DashboardDetails"
 import DashboardOnReserve from "../../pages/DashboardOnReserve/DashboardOnReserve"
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import ErrorPage from "../../pages/ErrorPage/ErrorPage"
+import ReserveSuccess from "../../pages/ReserveSuccess/ReserveSuccess"
 
 const OnLogin = () => {
     return (
@@ -17,8 +20,15 @@ const OnLogin = () => {
                         </div>
                         <div className="col-md-9">
                             <div className="content p-3"
-                            style={{ height: 600, backgroundColor: "#FFF0DE", borderRadius:"50px" }}>
-                                <DashboardDetails/>
+                                style={{ height: 600, backgroundColor: "#FFF0DE", borderRadius: "50px" }}>
+                                <Router>
+                                    <Routes>
+                                        <Route path="/dashboard" element={<Dashboard />} />
+                                        <Route path="/dashboarddetails" element={<DashboardDetails />} />
+                                        <Route path="/dashboardonreserve" element={<DashboardOnReserve />} />
+                                        <Route path="/reservesuccess" element={<ReserveSuccess/>} />
+                                    </Routes>
+                                </Router>
                             </div>
                         </div>
                     </div>
