@@ -1,7 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import PrimaryButton from "../../elements/PrimaryButton/PrimaryButton.jsx"
 
 
 const ReserveSuccess = () => {
+
+    const navigate = useNavigate();
+
     return (
         <div className="container">
 
@@ -20,6 +24,7 @@ const ReserveSuccess = () => {
                         type="button"
                         width="180px"
                         height="55px"
+                        onClick={() => navigate('/dashboardonreserve')}
                     />
 
                 </div>

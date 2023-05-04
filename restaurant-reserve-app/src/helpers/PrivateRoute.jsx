@@ -18,3 +18,5 @@ const PrivateRoute = () => {
 }
 
 export default PrivateRoute
+
+//setting routers

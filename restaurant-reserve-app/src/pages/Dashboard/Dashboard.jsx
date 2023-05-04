@@ -1,7 +1,11 @@
 import PrimaryButton from "../../elements/PrimaryButton/PrimaryButton.jsx"
 import image from "../../assets/dashboardnotreserve.png"
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+
+    const navigate = useNavigate();
+
     return (
         <div className="container">
 
@@ -23,6 +27,7 @@ const Dashboard = () => {
                         type="button"
                         width="125px"
                         height="55px"
+                        onClick={() => navigate('/menu')}
                     />
                 </div>
             </div>

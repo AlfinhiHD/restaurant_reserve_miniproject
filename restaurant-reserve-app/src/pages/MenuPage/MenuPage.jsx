@@ -7,8 +7,12 @@ import PrimaryButton from "../../elements/PrimaryButton/PrimaryButton"
 import Cart from "../../elements/Cart/Cart"
 
 import Pagination from "../Pagination/Pagination"
+import { useNavigate } from "react-router-dom"
 
 const MenuPage = () => {
+
+    const navigate = useNavigate();
+
     return (
         <div className="">
             <div className="row">
@@ -75,6 +79,7 @@ const MenuPage = () => {
                             label="Checkout"
                             width="150px"
                             height="40px"
+                            onClick={() => navigate('/reserveform')}
                         />
                     </div>
                 </div>

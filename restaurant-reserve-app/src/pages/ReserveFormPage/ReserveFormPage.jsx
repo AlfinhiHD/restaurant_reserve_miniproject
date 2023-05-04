@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"
 import Cart from "../../elements/Cart/Cart"
 import ContentTitle from "../../elements/ContentTitle/ContentTitle"
 import InputField from "../../elements/InputField/InputField"
@@ -7,6 +8,9 @@ import SecondaryButton from "../../elements/SecondaryButton/SecondaryButton"
 import TextArea from "../../elements/TextArea/TextArea"
 
 const ReserveFormPage = () => {
+
+    const navigate = useNavigate();
+
     return (
         <>
             <ContentTitle title="Please input reservation form / 符狸素 音羽斗 玲競芭胎苑" />
@@ -93,6 +97,7 @@ const ReserveFormPage = () => {
                             width="100px"
                             height="45px"
                             fontsize="15px"
+                            onClick={() => navigate('/confirmation')}
                         />
                         <SecondaryButton
                             className="button"
@@ -101,6 +106,7 @@ const ReserveFormPage = () => {
                             width="140px"
                             height="45px"
                             fontsize="15px"
+                            onClick={() => navigate('/menu')}
                         />
                     </div>
                 </div>

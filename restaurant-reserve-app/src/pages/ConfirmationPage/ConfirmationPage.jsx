@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"
 import Cart from "../../elements/Cart/Cart"
 import ContentTitle from "../../elements/ContentTitle/ContentTitle"
 import PrimaryButton from "../../elements/PrimaryButton/PrimaryButton"
@@ -6,6 +7,9 @@ import "./ConfirmationPage.css"
 
 
 const ConfirmationPage = () => {
+
+    const navigate = useNavigate();
+
     return (
         <div className="confirmationpage">
             <ContentTitle title="Please confirm your data / 符鯉須 艮振武 冶旺流" />
@@ -37,21 +41,23 @@ const ConfirmationPage = () => {
                 <div className="col-md-6">
                     <Cart />
                     <div className="mt-5 d-flex">
-                        <SecondaryButton
-                            className="me-5"
-                            label="Edit"
-                            type="button"
-                            width="80px"
-                            height="45px"
-                            fontsize="15px"
-                        />
                         <PrimaryButton
-                            className="button"
+                            className="button me-5"
                             label="Confirm"
                             type="button"
                             width="100px"
                             height="45px"
                             fontsize="15px"
+                            onClick={() => navigate('/reservesuccess')}
+                        />
+                        <SecondaryButton
+                            className="button"
+                            label="Edit"
+                            type="button"
+                            width="80px"
+                            height="45px"
+                            fontsize="15px"
+                            onClick={() => navigate('/reserveform')}
                         />
                     </div>
                 </div>

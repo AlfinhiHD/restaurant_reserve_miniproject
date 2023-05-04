@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import PrimaryButton from "../PrimaryButton/PrimaryButton"
 import "./DashboardReserveInfo.css"
 
 const DashboardReserveInfo = (props) => {
+    const navigate = useNavigate();
     return (
         <div className="reserveinfo">
             <p>Name :{props.name}</p>
@@ -14,6 +16,7 @@ const DashboardReserveInfo = (props) => {
                 width="80px"
                 height="40px"
                 fontsize="15px"
+                onClick={() => navigate('/dashboarddetails')}
             />
         </div>
     )

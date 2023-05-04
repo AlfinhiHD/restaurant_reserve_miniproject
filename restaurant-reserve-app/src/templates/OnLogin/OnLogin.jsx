@@ -13,18 +13,19 @@ import ConfirmationPage from "../../pages/ConfirmationPage/ConfirmationPage"
 const OnLogin = () => {
     return (
         <>
-            <NavbarOnLogin />
-            <section className="pt-1" style={{ height: 700, backgroundColor: "#B1464A" }}>
+            <Router>
+                <NavbarOnLogin />
+                <section className="pt-1" style={{ height: 700, backgroundColor: "#B1464A" }}>
 
-                <div className="ms-5 me-5 mt-4">
-                    <div className="row">
-                        <div className="col-md-3">
-                            <Sidebar />
-                        </div>
-                        <div className="col-md-9">
-                            <div className="content p-3"
-                                style={{ height: 600, backgroundColor: "#FFF0DE", borderRadius: "50px" }}>
-                                <Router>
+                    <div className="ms-5 me-5 mt-4">
+                        <div className="row">
+                            <div className="col-md-3">
+                                <Sidebar />
+                            </div>
+                            <div className="col-md-9">
+                                <div className="content p-3"
+                                    style={{ height: 600, backgroundColor: "#FFF0DE", borderRadius: "50px" }}>
+
                                     <Routes>
                                         <Route path="/dashboard" element={<Dashboard />} />
                                         <Route path="/dashboarddetails" element={<DashboardDetails />} />
@@ -32,16 +33,17 @@ const OnLogin = () => {
                                         <Route path="/reservesuccess" element={<ReserveSuccess />} />
                                         <Route path="/reserveform" element={<ReserveFormPage />} />
                                         <Route path="/confirmation" element={<ConfirmationPage />} />
-                                        <Route path="/menu" element={<MenuPage/>} />
-
+                                        <Route path="/menu" element={<MenuPage />} />
                                     </Routes>
-                                </Router>
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-            </section>
+                </section>
+            </Router>
+
         </>
     )
 }
