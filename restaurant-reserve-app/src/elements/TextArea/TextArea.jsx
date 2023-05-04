@@ -17,7 +17,7 @@ const TextArea = (props) => {
                 value={props.value}
                 onChange={props.onChange}
                 onBlur={props.onBlur}
-                inputClass={props.inputClass}
+                inputclass={props.inputclass}
             />
         </div>
     )

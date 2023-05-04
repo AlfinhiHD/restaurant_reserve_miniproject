@@ -9,17 +9,14 @@ const OffLogin = () => {
     return (
         <>
             <NavbarLanding />
-            <section style={{ height: 700, backgroundColor: "#B1464A" }}>
+            <section style={{ height: 800, backgroundColor: "#B1464A" }}>
                 <br />
-                <div className="mx-auto" style={{ height: 650, width: 450, backgroundColor: "#FFF0DE", borderRadius: "50px" }}>
-                    <Router>
-                        <Routes>
-                            <Route path="/" element={<LoginPage />} />
-                            <Route path="/register" element={<RegisterPage />} />
-                        </Routes>
-                    </Router>
-
-                </div>
+                <Router>
+                    <Routes>
+                        <Route path="/login" element={<LoginPage />} />
+                        <Route path="/register" element={<RegisterPage />} />
+                    </Routes>
+                </Router>
             </section>
             <Footer />
         </>

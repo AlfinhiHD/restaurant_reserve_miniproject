@@ -6,7 +6,7 @@ import LinkButton from "../../elements/LinkButton/LinkButton"
 const Footer = () => {
     return (
         <footer className="pt-5" style={{ backgroundColor: "#FFF0DE" }}>
-            <div className="row">
+            <div className="row me-0">
                 <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                     <img
                         src={LogoBlack}
