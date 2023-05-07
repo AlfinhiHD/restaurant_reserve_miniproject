@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom"
-import Cart from "../../elements/Cart/Cart"
 import ContentTitle from "../../elements/ContentTitle/ContentTitle"
 import InputField from "../../elements/InputField/InputField"
 import InputSelect from "../../elements/InputSelect/InputSelect"
@@ -88,7 +87,6 @@ const ReserveFormPage = () => {
                     </div>
                 </div>
                 <div className="col-md-6">
-                    <Cart />
                     <div className="mt-5 d-flex">
                         <PrimaryButton
                             className="me-5 button"

@@ -1,19 +1,40 @@
 import { Navigate, Outlet } from "react-router-dom"
+import NavbarOnLogin from "../components/NavbarOnLogin/NavbarOnLogin"
+import Sidebar from "../components/Sidebar/Sidebar"
 
 const PrivateRoute = () => {
-    let user
-    
+    let isLoggin
+
     // get token dari local storage
-    const token = localStorage.getItem('token')
-    console.log(token)
+    const userString = sessionStorage.getItem("user");
+    const user = JSON.parse(userString);
 
     // check token dari local storage
-    token ? user = true : user = false;
+    user.usertoken ? isLoggin = true : isLoggin = false;
 
-    if(!user) {
-        return <Navigate to={'/login'} replace />
+    if (!isLoggin) {
+        return <Navigate to={'/'} replace />
     } else {
-        return <Outlet />
+        return (
+            <>
+                <NavbarOnLogin />
+                <section className="pt-1" style={{ height: 700, backgroundColor: "#B1464A" }}>
+                    <div className="ms-5 me-5 mt-4">
+                        <div className="row">
+                            <div className="col-md-3">
+                                <Sidebar />
+                            </div>
+                            <div className="col-md-9">
+                                <div className="content p-3"
+                                    style={{ height: 600, backgroundColor: "#FFF0DE", borderRadius: "50px" }}>
+                                    <Outlet />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </>
+        )
     }
 }
 

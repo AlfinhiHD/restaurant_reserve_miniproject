@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom'
 import NavbarLanding from '../../components/NavbarLanding/NavbarLanding'
 import LoginPage from '../../pages/LoginPage/LoginPage'
 import RegisterPage from '../../pages/RegisterPage/RegisterPage'
@@ -11,12 +11,7 @@ const OffLogin = () => {
             <NavbarLanding />
             <section style={{ height: 800, backgroundColor: "#B1464A" }}>
                 <br />
-                <Router>
-                    <Routes>
-                        <Route path="/login" element={<LoginPage />} />
-                        <Route path="/register" element={<RegisterPage />} />
-                    </Routes>
-                </Router>
+                <Outlet />
             </section>
             <Footer />
         </>

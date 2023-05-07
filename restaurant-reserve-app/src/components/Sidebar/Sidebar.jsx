@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
 
+    const userString = sessionStorage.getItem("user");
+    const user = JSON.parse(userString);
+
     const navigate = useNavigate();
 
     const [activeIndex, setActiveIndex] = useState(0);
@@ -12,11 +15,24 @@ const Sidebar = () => {
         event.preventDefault();
         setActiveIndex(index);
         if (index === 0) {
-          navigate('/dashboard');
+            navigate('/dashboard');
         } else if (index === 1) {
-          navigate('/menu');
+            navigate('/menu');
+        } else if (index === 2) {
+        navigate('/reserveform');
         }
-      };
+    };
+
+
+    // handle logout process
+    const handleLogout = () => {
+        if (user.usertoken) {
+            //remove token from localStorage
+            sessionStorage.removeItem("user");
+            // redirect to login page
+            navigate('/')
+        }
+    }
 
     return (
         <>
@@ -27,11 +43,14 @@ const Sidebar = () => {
                         Dashboard
                     </a>
                     <a href='' className={`list-group-item ${activeIndex === 1 ? 'active' : ''}`} onClick={(e) => handleItemClick(e, 1)}>
+                        Our Menu
+                    </a>
+                    <a href='' className={`list-group-item ${activeIndex === 2 ? 'active' : ''}`} onClick={(e) => handleItemClick(e, 2)}>
                         Reserve
                     </a>
 
-                    <div style={{ height: 380 }} className="d-flex align-items-end justify-content-center">
-                        <a href="#" className='list-group-item'>Logout</a>
+                    <div style={{ height: 350 }} className="d-flex align-items-end justify-content-center">
+                        <a href="" onClick={handleLogout} className='list-group-item'>Logout</a>
                     </div>
                 </div>
             </div>

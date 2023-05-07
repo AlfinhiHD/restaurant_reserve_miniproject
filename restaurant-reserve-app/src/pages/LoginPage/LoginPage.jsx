@@ -10,9 +10,11 @@ import * as Yup from 'yup';
 
 import { UserLogin } from "../../helpers/gqlHasura.js"
 import { useLazyQuery, useQuery } from "@apollo/client"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 
 const LoginPage = () => {
+
+    const navigate = useNavigate();
 
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -40,42 +42,30 @@ const LoginPage = () => {
                     password: values.password
                 },
             })
-            console.log(data)
-
-            // if (data?.user?.length > 0) {
-            //     setErrorMessage('')
-            //     const { username, usertoken } = data.user[0];
-            //     console.log(username);
-            //     console.log(usertoken);
-            //     localStorage.setItem("token", usertoken);
-            //   } else {
-            //     setErrorMessage('Username or password is incorrect');
-            //   }
-
-            // if (data?.user?.length > 0) {
-            //     setErrorMessage('')
-            //     const token = data.user.usertoken
-            //     console.log(data)
-            //     console.log(data.user)
-            //     console.log(token)
-            //     localStorage.setItem("token", token)
-        
-            // } else {
-            //     setErrorMessage('Username or password is incorrect');
-            // }
-
-            
-        
         },
     })
 
     useEffect(() => {
         if (data && data.user && data.user.length > 0) {
-          const { username, usertoken } = data.user[0];
+          
+          const { username, usertoken, userid } = data.user[0];
           console.log(username);
           console.log(usertoken);
+          console.log(userid);
+
           localStorage.setItem("token", usertoken);
           setErrorMessage('')
+
+          const user = {
+            username,
+            usertoken,
+            userid
+          }
+
+          sessionStorage.setItem("user", JSON.stringify(user));
+
+          navigate('/dashboard')
+
         } else if (data && data.user && data.user.length === 0) {
           setErrorMessage('Username or password is incorrect');
         }

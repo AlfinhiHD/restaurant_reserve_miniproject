@@ -9,40 +9,34 @@ import ReserveSuccess from "../../pages/ReserveSuccess/ReserveSuccess"
 import MenuPage from "../../pages/MenuPage/MenuPage"
 import ReserveFormPage from "../../pages/ReserveFormPage/ReserveFormPage"
 import ConfirmationPage from "../../pages/ConfirmationPage/ConfirmationPage"
+import PrivateRoute from "../../helpers/PrivateRoute"
+import LoginPage from "../../pages/LoginPage/LoginPage"
+import RegisterPage from "../../pages/RegisterPage/RegisterPage"
+import OffLogin from "../OffLogin/OffLogin"
+import { useState } from "react"
 
 const OnLogin = () => {
+
+
     return (
         <>
-            <Router>
-                <NavbarOnLogin />
-                <section className="pt-1" style={{ height: 700, backgroundColor: "#B1464A" }}>
-
-                    <div className="ms-5 me-5 mt-4">
-                        <div className="row">
-                            <div className="col-md-3">
-                                <Sidebar />
-                            </div>
-                            <div className="col-md-9">
-                                <div className="content p-3"
-                                    style={{ height: 600, backgroundColor: "#FFF0DE", borderRadius: "50px" }}>
-
-                                    <Routes>
-                                        <Route path="/dashboard" element={<Dashboard />} />
-                                        <Route path="/dashboarddetails" element={<DashboardDetails />} />
-                                        <Route path="/dashboardonreserve" element={<DashboardOnReserve />} />
-                                        <Route path="/reservesuccess" element={<ReserveSuccess />} />
-                                        <Route path="/reserveform" element={<ReserveFormPage />} />
-                                        <Route path="/confirmation" element={<ConfirmationPage />} />
-                                        <Route path="/menu" element={<MenuPage />} />
-                                    </Routes>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </section>
-            </Router>
+                <Router>
+                    <Routes>
+                        <Route element={<PrivateRoute />}>
+                            <Route path="/dashboard" element={<Dashboard />} />
+                            <Route path="/dashboarddetails" element={<DashboardDetails />} />
+                            <Route path="/dashboardonreserve" element={<DashboardOnReserve />} />
+                            <Route path="/reservesuccess" element={<ReserveSuccess />} />
+                            <Route path="/reserveform" element={<ReserveFormPage />} />
+                            <Route path="/confirmation" element={<ConfirmationPage />} />
+                            <Route path="/menu" element={<MenuPage />} />
+                        </Route>
+                        <Route element={<OffLogin />}>
+                            <Route path="/" element={<LoginPage />} />
+                            <Route path="/register" element={<RegisterPage />} />
+                        </Route>
+                    </Routes>
+                </Router>
 
         </>
     )

@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom"
-import Cart from "../../elements/Cart/Cart"
 import ContentTitle from "../../elements/ContentTitle/ContentTitle"
 import PrimaryButton from "../../elements/PrimaryButton/PrimaryButton"
 import SecondaryButton from "../../elements/SecondaryButton/SecondaryButton"
@@ -39,7 +38,6 @@ const ConfirmationPage = () => {
                     </div>
                 </div>
                 <div className="col-md-6">
-                    <Cart />
                     <div className="mt-5 d-flex">
                         <PrimaryButton
                             className="button me-5"

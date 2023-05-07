@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import LogoWhite from "../../assets/LogoWhite.png"
 import NavItem from "../../elements/NavItem/NavItem"
 import './NavbarOnLogin.css'
 
 const NavbarOnLogin = () => {
+    const userString = sessionStorage.getItem("user");
+    const user = JSON.parse(userString);
+
     return (
         <header id='NavbarOnLogin'>
             <nav className="navbar navbar-expand-lg">
@@ -18,7 +21,7 @@ const NavbarOnLogin = () => {
                         />
                     </a>
                     <div className="d-flex justify-content-end me-5 pt-2">
-                        <p>いらっしゃいませ, Alfinhi Hajid Dhia</p>
+                        <p>いらっしゃいませ, {user.username} </p>
                     </div>
                 </div>
             </nav>
