@@ -1,0 +1,11 @@
+.inputselectmenu select {
+    width: 367px;
+    height: 41px;
+
+    background: #FFF0DE;
+    border: 1px solid #000000;
+    border-radius: 100px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+

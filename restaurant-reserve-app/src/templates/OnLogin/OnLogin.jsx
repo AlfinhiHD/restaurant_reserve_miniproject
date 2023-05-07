@@ -14,12 +14,16 @@ import LoginPage from "../../pages/LoginPage/LoginPage"
 import RegisterPage from "../../pages/RegisterPage/RegisterPage"
 import OffLogin from "../OffLogin/OffLogin"
 import { useState } from "react"
+import ReserveContext from "../../context/ReserveContext"
 
 const OnLogin = () => {
 
+    const [reserve, setReserve] = useState([])
+    const value = { reserve, setReserve }
 
     return (
         <>
+            <ReserveContext.Provider value={value}>
                 <Router>
                     <Routes>
                         <Route element={<PrivateRoute />}>
@@ -38,6 +42,7 @@ const OnLogin = () => {
                     </Routes>
                 </Router>
 
+            </ReserveContext.Provider>
         </>
     )
 }

@@ -17,10 +17,10 @@ const InputSelect = (props) => {
                 <option disable="" value="" hidden="">
                     Pick your time
                 </option>
-                <option name="category" value="Electronic">
+                <option name="category" value="Lunch (12.00 - 14.00) ">
                     Lunch (12.00 - 14.00) 
                 </option>
-                <option name="category" value="Furniture">
+                <option name="category" value="Dinner (18.00 - 20.00)">
                     Dinner (18.00 - 20.00)
                 </option>
             </select>
