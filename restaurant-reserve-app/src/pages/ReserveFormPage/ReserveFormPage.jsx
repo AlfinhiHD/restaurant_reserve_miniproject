@@ -20,12 +20,12 @@ const ReserveFormPage = () => {
 
     const formik = useFormik({
         initialValues: {
-            reserve_name: "",
-            person: "",
-            date: "",
-            time: "",
-            menuselected: "",
-            notes: ""
+            reserve_name: reserve.reserve_name,
+            person: reserve.person,
+            date: reserve.date,
+            time: reserve.time,
+            menuselected: reserve.menuselected,
+            notes: reserve.notes
         },
         validationSchema: Yup.object().shape({
             reserve_name: Yup.string()
@@ -47,7 +47,7 @@ const ReserveFormPage = () => {
         onSubmit: (values, actions) => {
             actions.resetForm();
             setReserve(values)
-            navigate('/confirmation')
+            
 
         },
     })
@@ -197,6 +197,7 @@ const ReserveFormPage = () => {
                                 width="100px"
                                 height="45px"
                                 fontsize="15px"
+                                onClick={() => navigate('/confirmation')}
                             />
                             <SecondaryButton
                                 className="button"

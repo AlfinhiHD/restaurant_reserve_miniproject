@@ -7,6 +7,7 @@ import { useContext } from "react"
 import ReserveContext from "../../context/ReserveContext"
 import { useQuery } from "@apollo/client"
 import { GetMenuData, GetSelectMenu } from "../../helpers/gqlHasura"
+import Modal from "../../elements/Modal/Modal"
 
 
 const ConfirmationPage = () => {
@@ -65,7 +66,8 @@ const ConfirmationPage = () => {
                             width="100px"
                             height="45px"
                             fontsize="15px"
-                            onClick={() => navigate('/reservesuccess')}
+                            databstoggle="modal" 
+                            databstarget="#exampleModal"
                         />
                         <SecondaryButton
                             className="button"
@@ -79,7 +81,7 @@ const ConfirmationPage = () => {
                     </div>
                 </div>
             </div>
-
+        <Modal menu={data?.menu[0].menu_name} />
         </div>
     )
 }
