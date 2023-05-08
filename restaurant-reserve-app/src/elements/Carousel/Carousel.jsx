@@ -10,7 +10,7 @@ const Carousel = () => {
         <>
             {loading ?
                 <Loader
-                    height={550}
+                    height={500}
                     width={80}
                     secondaryColor="#B1464A"
                     color="#FFF0DE"

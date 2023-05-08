@@ -49,7 +49,7 @@ mutation MyMutation($object: reservation_insert_input!) {
 }
 `;
 
-export const GetReservationData = gql `
+export const GetReservationData = gql`
 query MyQuery($userid: String) {
   reservation(where: {userid: {_eq: $userid}}) {
     date
@@ -64,3 +64,17 @@ query MyQuery($userid: String) {
 }
 `;
 
+export const GetDetailReserve = gql`
+query MyQuery($userid: String, $reservation_id: String) {
+  reservation(where: {userid: {_eq: $userid}, _and: {reservation_id: {_eq: $reservation_id}}}) {
+    date
+    menu_id
+    notes
+    person
+    reservation_id
+    reserve_name
+    time
+    userid
+  }
+}
+`;

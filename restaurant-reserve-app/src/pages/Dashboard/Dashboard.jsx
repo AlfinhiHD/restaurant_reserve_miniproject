@@ -1,5 +1,4 @@
 import PrimaryButton from "../../elements/PrimaryButton/PrimaryButton.jsx"
-import image from "../../assets/dashboardnotreserve.png"
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { GetReservationData } from "../../helpers/gqlHasura.js";
@@ -7,6 +6,7 @@ import ContentTitle from "../../elements/ContentTitle/ContentTitle.jsx";
 import resto from "../../assets/resto.jpg"
 import DashboardReserveInfo from "../../elements/DashboardReserveInfo/DashboardReserveInfo.jsx"
 import Loader from "../../elements/Loader/Loader.jsx";
+import DashboardNotReserve from "../DashboardNotReserve/DashboardNotReserve.jsx";
 
 const Dashboard = () => {
 
@@ -29,9 +29,9 @@ const Dashboard = () => {
                         color="#FFF0DE"
                     />
                 </div>
-
-                : <div className="container">
-                    {data ?
+                :
+                <div className="container">
+                    {data.reservation[0] ?
                         <>
                             <ContentTitle title="Here’s your reservation! / 弥和得" />
                             <div style={{ padding: "10px", maxHeight: "500px", overflowY: "scroll" }}>
@@ -65,28 +65,7 @@ const Dashboard = () => {
                             </div>
                         </>
                         :
-                        <div className="row mt-5">
-                            <div className="col-md-6">
-                                <img style={{ width: 500, height: 400 }} src={image} />
-                            </div>
-                            <div className="col-md-6 mt-5">
-                                <h1
-                                    style={{
-                                        fontStyle: "normal",
-                                        fontWeight: 700,
-                                        fontSize: "50px"
-                                    }}
-                                    className="mt-5">You didn't reserve anything.</h1>
-                                <PrimaryButton
-                                    className="mt-5"
-                                    label="Do Reserve"
-                                    type="button"
-                                    width="125px"
-                                    height="55px"
-                                    onClick={() => navigate('/menu')}
-                                />
-                            </div>
-                        </div>}
+                        <DashboardNotReserve />}
                 </div>}
         </>
 

@@ -21,7 +21,7 @@ const DashboardReserveDetails = (props) => {
                         <p>{props.date}</p>
                     </div>
                 </div>
-                <div className="col-md-3 ps-5">
+                <div className="col-md-4 ps-5">
                     <div className="mt-2 mb-5">
                         <DetailsTitle title="Time :" />
                         <p>{props.time}</p>
@@ -32,18 +32,11 @@ const DashboardReserveDetails = (props) => {
                     </div>
 
                 </div>
-                <div className="col-md-6 mt-1">
-                    <div className="d-flex flex-column align-items-center">
+                <div className="col-md-4 mt-1">
+                    <div className="ms-5">
                         <DetailsTitle title="Menu" />
-                        <div
-                            className="pe-5"
-                            style={{ maxHeight: 130, overflowY: "scroll" }}>
-                            <p>Salmon Sushi - 2pcs</p>
-                            <p>Makimono Sushi - 5pcs</p>
-                            <p>Crab Sushi - 10pcs</p>
-                            <p>Crab Sushi - 10pcs</p>
-                            <p>Crab Sushi - 10pcs</p>
-                        </div>
+                        <img src=""></img>
+                        <p>Salmon Sushi</p>
                         <div className="mt-5 d-flex">
                             <PrimaryButton
                                 className="button me-5"
@@ -62,13 +55,9 @@ const DashboardReserveDetails = (props) => {
                                 fontsize="13px"
                             />
                         </div>
-
-
                     </div>
-
                 </div>
             </div>
-
         </div>
     )
 }
