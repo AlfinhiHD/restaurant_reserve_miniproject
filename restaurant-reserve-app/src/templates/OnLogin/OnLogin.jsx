@@ -38,6 +38,7 @@ const OnLogin = () => {
                             <Route path="/" element={<LoginPage />} />
                             <Route path="/register" element={<RegisterPage />} />
                         </Route>
+                        <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </Router>
 

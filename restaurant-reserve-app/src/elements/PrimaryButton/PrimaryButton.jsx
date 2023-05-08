@@ -10,6 +10,7 @@ const PrimaryButton = (props) => {
                 onClick={props.onClick}
                 data-bs-toggle={props.databstoggle}
                 data-bs-target={props.databstarget}
+                disabled={props.disabled}
             >{props.label}</button>
         </div>
     )

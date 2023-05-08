@@ -85,4 +85,15 @@ mutation MyMutation($reservation_id: String!) {
     reservation_id
   }
 }
+`;
+
+export const UpdateReservation = gql`
+mutation MyMutation($reservation_id: String!, $time: String!, $date: String!) {
+  update_reservation(where: {reservation_id: {_eq: $reservation_id}}, 
+  _set: {time: $time, date: $date}) {
+    returning {
+      reservation_id
+    }
+  }
+}
 `

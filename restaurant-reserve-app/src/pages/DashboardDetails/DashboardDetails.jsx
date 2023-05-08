@@ -21,7 +21,6 @@ const DashboardDetails = () => {
             reservation_id: reservation_id
         }
     })
-
     return (
         <div className="container">
             <div className="container"

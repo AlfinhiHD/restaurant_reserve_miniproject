@@ -36,6 +36,9 @@ const ModalDelete = ({ id }) => {
                         <h1 style={{ color: "#FFF0DE" }} className="modal-title fs-5" id="exampleModalLabel">Confirm reservation?</h1>
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
+                    <div className="modal-body text-white">
+                        Are you sure? You will lost your reserve money
+                    </div>
                     <div className="modal-footer">
                         <TertiaryButton
                             className="button me-5"

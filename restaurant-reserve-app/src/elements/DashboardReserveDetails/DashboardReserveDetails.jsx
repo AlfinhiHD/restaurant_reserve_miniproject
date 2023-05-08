@@ -5,6 +5,7 @@ import PrimaryButton from "../PrimaryButton/PrimaryButton"
 import SecondaryButton from "../SecondaryButton/SecondaryButton"
 import "./DashboardReserveDetails.css"
 import ModalDelete from "../ModalDelete/ModalDelete"
+import ModalEdit from "../ModalEdit/ModalEdit"
 
 const DashboardReserveDetails = (props) => {
 
@@ -53,7 +54,9 @@ const DashboardReserveDetails = (props) => {
                                 width="100px"
                                 height="35px"
                                 fontsize="13px"
-                                
+                                databstoggle="modal"
+                                databstarget="#editModal"
+
                             />
                             <SecondaryButton
                                 className="button"
@@ -70,6 +73,13 @@ const DashboardReserveDetails = (props) => {
                 </div>
             </div>
             <ModalDelete id={props.reservation_id} />
+            {props.date && props.time && props.reservation_id && (
+                <ModalEdit
+                    date={props.date}
+                    time={props.time}
+                    id={props.reservation_id}
+                />
+            )}
         </div>
     )
 }
