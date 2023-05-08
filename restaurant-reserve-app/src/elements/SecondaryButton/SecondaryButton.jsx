@@ -9,6 +9,8 @@ const SecondaryButton = (props) => {
                 className={props.className}
                 onClick={props.onClick}
                 data-bs-dismiss={props.databsdismiss}
+                data-bs-toggle={props.databstoggle}
+                data-bs-target={props.databstarget}
             >{props.label}</button>
         </div>
     )

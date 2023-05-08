@@ -7,7 +7,8 @@ import { useContext } from "react"
 import ReserveContext from "../../context/ReserveContext"
 import { useQuery } from "@apollo/client"
 import { GetMenuData, GetSelectMenu } from "../../helpers/gqlHasura"
-import Modal from "../../elements/Modal/Modal"
+import ModalPost from "../../elements/ModalPost/ModalPost"
+
 
 
 const ConfirmationPage = () => {
@@ -67,7 +68,7 @@ const ConfirmationPage = () => {
                             height="45px"
                             fontsize="15px"
                             databstoggle="modal" 
-                            databstarget="#exampleModal"
+                            databstarget="#postModal"
                         />
                         <SecondaryButton
                             className="button"
@@ -81,7 +82,7 @@ const ConfirmationPage = () => {
                     </div>
                 </div>
             </div>
-        <Modal menu={data?.menu[0].menu_name} />
+        <ModalPost menu={data?.menu[0].menu_name} />
         </div>
     )
 }

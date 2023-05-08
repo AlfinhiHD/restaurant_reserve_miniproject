@@ -47,34 +47,53 @@ mutation MyMutation($object: reservation_insert_input!) {
     reservation_id
   }
 }
+`;
+
+export const GetReservationData = gql`
+query MyQuery($userid: String) {
+  reservation(where: {userid: {_eq: $userid}}) {
+    date
+    menu_id
+    notes
+    person
+    reservation_id
+    reserve_name
+    time
+    userid
+  }
+}
+`;
+
+export const GetDetailReserve = gql`
+query MyQuery($userid: String, $reservation_id: String) {
+  reservation(where: {userid: {_eq: $userid}, _and: {reservation_id: {_eq: $reservation_id}}}) {
+    date
+    menu_id
+    notes
+    person
+    reservation_id
+    reserve_name
+    time
+    userid
+  }
+}
+`;
+
+export const DeleteResevation = gql`
+mutation MyMutation($reservation_id: String!) {
+  delete_reservation_by_pk(reservation_id: $reservation_id) {
+    reservation_id
+  }
+}
+`;
+
+export const UpdateReservation = gql`
+mutation MyMutation($reservation_id: String!, $time: String!, $date: String!) {
+  update_reservation(where: {reservation_id: {_eq: $reservation_id}}, 
+  _set: {time: $time, date: $date}) {
+    returning {
+      reservation_id
+    }
+  }
+}
 `
-
-// export const GetSearchMenu = gql`
-// query MyQuery(
-//   $name: String, $productname: String, $productcategory: String, $limit: Int!, $offset: Int!
-//   ) {
-//   menu(where: {
-//     productcategory: {_ilike: $productcategory}, 
-//     productname: {_ilike: $productname}},
-//     limit: $limit
-//     offset: $offset
-//     ) {
-//     menu_id
-//     productcategory
-//     productimage
-//     productname
-//     productprice
-//   }
-// }`;
-
-// export const GetQtyMenu = gql`
-// query MyQuery(
-//   $menu_id: String, $userid: String
-//   )  {
-//   cart(where: {menu_id: {_eq: $menu_id}, userid: {_eq: $userid}}) {
-//     quantity
-//   }
-// }
-// `;
-
-

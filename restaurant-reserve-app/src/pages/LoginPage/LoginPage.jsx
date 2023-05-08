@@ -30,7 +30,6 @@ const LoginPage = () => {
                 .email('Invalid email address')
                 .required('The email field must be filled in'),
             password: Yup.string()
-                .min(6, 'Password must be at least 6 characters')
                 .required('The password field must be filled in')
         }),
         onSubmit: (values, actions) => {
