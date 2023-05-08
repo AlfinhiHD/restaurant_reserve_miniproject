@@ -10,7 +10,7 @@ const PrivateRoute = () => {
     const user = JSON.parse(userString);
 
     // check token dari local storage
-    user.usertoken ? isLoggin = true : isLoggin = false;
+    user?.usertoken ? isLoggin = true : isLoggin = false;
 
     if (!isLoggin) {
         return <Navigate to={'/'} replace />

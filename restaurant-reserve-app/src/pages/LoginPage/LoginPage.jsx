@@ -51,8 +51,6 @@ const LoginPage = () => {
           console.log(username);
           console.log(usertoken);
           console.log(userid);
-
-          localStorage.setItem("token", usertoken);
           setErrorMessage('')
 
           const user = {
