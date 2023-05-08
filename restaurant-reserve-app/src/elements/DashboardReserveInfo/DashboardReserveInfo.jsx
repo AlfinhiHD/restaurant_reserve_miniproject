@@ -6,9 +6,9 @@ const DashboardReserveInfo = (props) => {
     const navigate = useNavigate();
     return (
         <div className="reserveinfo">
-            <p>Name :{props.name}</p>
-            <p>Date :{props.date}</p>
-            <p>Time :{props.time}</p>
+            <p>Name : {props.name}</p>
+            <p>Date : {props.date}</p>
+            <p>Time : {props.time}</p>
             <PrimaryButton
                 className="mb-2"
                 label="Details"

@@ -47,34 +47,20 @@ mutation MyMutation($object: reservation_insert_input!) {
     reservation_id
   }
 }
-`
+`;
 
-// export const GetSearchMenu = gql`
-// query MyQuery(
-//   $name: String, $productname: String, $productcategory: String, $limit: Int!, $offset: Int!
-//   ) {
-//   menu(where: {
-//     productcategory: {_ilike: $productcategory}, 
-//     productname: {_ilike: $productname}},
-//     limit: $limit
-//     offset: $offset
-//     ) {
-//     menu_id
-//     productcategory
-//     productimage
-//     productname
-//     productprice
-//   }
-// }`;
-
-// export const GetQtyMenu = gql`
-// query MyQuery(
-//   $menu_id: String, $userid: String
-//   )  {
-//   cart(where: {menu_id: {_eq: $menu_id}, userid: {_eq: $userid}}) {
-//     quantity
-//   }
-// }
-// `;
-
+export const GetReservationData = gql `
+query MyQuery($userid: String) {
+  reservation(where: {userid: {_eq: $userid}}) {
+    date
+    menu_id
+    notes
+    person
+    reservation_id
+    reserve_name
+    time
+    userid
+  }
+}
+`;
 
