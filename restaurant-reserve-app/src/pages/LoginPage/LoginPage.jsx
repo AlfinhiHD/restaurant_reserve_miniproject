@@ -90,7 +90,7 @@ const LoginPage = () => {
                             value={formik.values.email}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            inputclass={
+                            className={
                                 formik.errors.email && formik.touched.email
                                     ? 'form-control mt-1 is-invalid'
                                     : 'form-control mt-1'}
@@ -110,7 +110,7 @@ const LoginPage = () => {
                             value={formik.values.password}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            inputclass={
+                            className={
                                 formik.errors.password && formik.touched.password
                                     ? 'form-control mt-1 is-invalid'
                                     : 'form-control mt-1'}

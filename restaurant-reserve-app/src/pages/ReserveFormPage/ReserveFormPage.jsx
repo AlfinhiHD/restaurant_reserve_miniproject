@@ -17,7 +17,6 @@ const ReserveFormPage = () => {
     const navigate = useNavigate();
     const {reserve, setReserve} = useContext(ReserveContext)
 
-
     const formik = useFormik({
         initialValues: {
             reserve_name: reserve.reserve_name,
@@ -30,7 +29,6 @@ const ReserveFormPage = () => {
         validationSchema: Yup.object().shape({
             reserve_name: Yup.string()
                 .matches(/^[a-zA-Z0-9 ]+$/, 'Reserve Name must not contain symbols')
-                .min(6, 'Reserve Name must be at least 6 characters')
                 .required('The Reserve Name field must be filled in'),
             person: Yup.string()
                 .required('The person field must be filled in'),
@@ -47,8 +45,7 @@ const ReserveFormPage = () => {
         onSubmit: (values, actions) => {
             actions.resetForm();
             setReserve(values)
-            
-
+            navigate('/confirmation')
         },
     })
 
@@ -69,7 +66,7 @@ const ReserveFormPage = () => {
                                 value={formik.values.reserve_name}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                inputclass={
+                                className={
                                     formik.errors.reserve_name && formik.touched.reserve_name
                                         ? 'form-control mt-1 is-invalid'
                                         : 'form-control mt-1'
@@ -85,14 +82,13 @@ const ReserveFormPage = () => {
                             <InputField
                                 label="Person"
                                 htmlFor="person"
-
                                 type="number"
                                 id="person"
                                 name="person"
                                 value={formik.values.person}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                inputclass={
+                                className={
                                     formik.errors.person && formik.touched.person
                                         ? 'form-control mt-1 is-invalid'
                                         : 'form-control mt-1'
@@ -114,7 +110,7 @@ const ReserveFormPage = () => {
                                 value={formik.values.date}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                inputclass={
+                                className={
                                     formik.errors.date && formik.touched.date
                                         ? 'form-control mt-1 is-invalid'
                                         : 'form-control mt-1'
@@ -134,7 +130,7 @@ const ReserveFormPage = () => {
                                 value={formik.values.time}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                inputclass={
+                                className={
                                     formik.errors.time && formik.touched.time
                                         ? 'form-control mt-1 is-invalid'
                                         : 'form-control mt-1'
@@ -156,7 +152,7 @@ const ReserveFormPage = () => {
                                 value={formik.values.menuselected}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                inputclass={
+                                className={
                                     formik.errors.menuselected && formik.touched.menuselected
                                         ? 'form-control mt-1 is-invalid'
                                         : 'form-control mt-1'
@@ -179,7 +175,7 @@ const ReserveFormPage = () => {
                                 value={formik.values.notes}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleBlur}
-                                inputclass={
+                                className={
                                     formik.errors.notes && formik.touched.notes
                                         ? 'form-control mt-1 is-invalid'
                                         : 'form-control mt-1'
@@ -197,7 +193,6 @@ const ReserveFormPage = () => {
                                 width="100px"
                                 height="45px"
                                 fontsize="15px"
-                                onClick={() => navigate('/confirmation')}
                             />
                             <SecondaryButton
                                 className="button"

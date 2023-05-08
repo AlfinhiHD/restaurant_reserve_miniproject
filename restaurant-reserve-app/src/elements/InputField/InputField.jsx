@@ -8,7 +8,7 @@ const InputField = (props) => {
             </label>
             <br/>
             <input
-                className="form-control"
+                className={props.className}
                 type={props.type}
                 id={props.id}
                 name={props.name}
@@ -16,7 +16,6 @@ const InputField = (props) => {
                 value={props.value}
                 onChange={props.onChange}
                 onBlur={props.onBlur}
-                inputclass={props.inputclass}
             />
         </div>
     )

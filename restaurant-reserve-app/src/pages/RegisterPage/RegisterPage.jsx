@@ -81,7 +81,7 @@ return (
                         value={formik.values.username}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        inputclass={
+                        className={
                             formik.errors.username && formik.touched.username
                                 ? 'form-control mt-1 is-invalid'
                                 : 'form-control mt-1'
@@ -103,7 +103,7 @@ return (
                         value={formik.values.email}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        inputclass={
+                        className={
                             formik.errors.email && formik.touched.email
                                 ? 'form-control mt-1 is-invalid'
                                 : 'form-control mt-1'}
@@ -123,7 +123,7 @@ return (
                         value={formik.values.password}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        inputclass={
+                        className={
                             formik.errors.password && formik.touched.password
                                 ? 'form-control mt-1 is-invalid'
                                 : 'form-control mt-1'}
@@ -145,7 +145,7 @@ return (
                         value={formik.values.address}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        inputclass={
+                        className={
                             formik.errors.address && formik.touched.address
                                 ? 'form-control mt-1 is-invalid'
                                 : 'form-control mt-1'}
