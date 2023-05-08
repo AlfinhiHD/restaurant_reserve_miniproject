@@ -1,9 +1,18 @@
+import { useQuery } from "@apollo/client"
+import { GetSelectMenu } from "../../helpers/gqlHasura"
 import DetailsTitle from "../DetailsTitle/DetailsTitle"
 import PrimaryButton from "../PrimaryButton/PrimaryButton"
 import SecondaryButton from "../SecondaryButton/SecondaryButton"
 import "./DashboardReserveDetails.css"
+import ModalDelete from "../ModalDelete/ModalDelete"
+import ModalEdit from "../ModalEdit/ModalEdit"
 
 const DashboardReserveDetails = (props) => {
+
+    const { data } = useQuery(GetSelectMenu, {
+        variables: { menu_id: props.menu_id }
+    })
+
     return (
         <div className="reservedetails">
             <div className="row">
@@ -21,7 +30,7 @@ const DashboardReserveDetails = (props) => {
                         <p>{props.date}</p>
                     </div>
                 </div>
-                <div className="col-md-3 ps-5">
+                <div className="col-md-4 ps-5">
                     <div className="mt-2 mb-5">
                         <DetailsTitle title="Time :" />
                         <p>{props.time}</p>
@@ -32,18 +41,11 @@ const DashboardReserveDetails = (props) => {
                     </div>
 
                 </div>
-                <div className="col-md-6 mt-1">
-                    <div className="d-flex flex-column align-items-center">
-                        <DetailsTitle title="Menu" />
-                        <div
-                            className="pe-5"
-                            style={{ maxHeight: 130, overflowY: "scroll" }}>
-                            <p>Salmon Sushi - 2pcs</p>
-                            <p>Makimono Sushi - 5pcs</p>
-                            <p>Crab Sushi - 10pcs</p>
-                            <p>Crab Sushi - 10pcs</p>
-                            <p>Crab Sushi - 10pcs</p>
-                        </div>
+                <div className="col-md-4 mt-1">
+                    <div className="ms-5">
+                        <DetailsTitle title="Menu :" />
+                        <img style={{ width: "300px" }} src={data?.menu[0].image}></img>
+                        <p className="mt-3">{data?.menu[0].menu_name}</p>
                         <div className="mt-5 d-flex">
                             <PrimaryButton
                                 className="button me-5"
@@ -52,6 +54,9 @@ const DashboardReserveDetails = (props) => {
                                 width="100px"
                                 height="35px"
                                 fontsize="13px"
+                                databstoggle="modal"
+                                databstarget="#editModal"
+
                             />
                             <SecondaryButton
                                 className="button"
@@ -60,15 +65,21 @@ const DashboardReserveDetails = (props) => {
                                 width="140px"
                                 height="35px"
                                 fontsize="13px"
+                                databstoggle="modal"
+                                databstarget="#deleteModal"
                             />
                         </div>
-
-
                     </div>
-
                 </div>
             </div>
-
+            <ModalDelete id={props.reservation_id} />
+            {props.date && props.time && props.reservation_id && (
+                <ModalEdit
+                    date={props.date}
+                    time={props.time}
+                    id={props.reservation_id}
+                />
+            )}
         </div>
     )
 }

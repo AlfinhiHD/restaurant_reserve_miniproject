@@ -30,7 +30,6 @@ const LoginPage = () => {
                 .email('Invalid email address')
                 .required('The email field must be filled in'),
             password: Yup.string()
-                .min(6, 'Password must be at least 6 characters')
                 .required('The password field must be filled in')
         }),
         onSubmit: (values, actions) => {
@@ -90,7 +89,7 @@ const LoginPage = () => {
                             value={formik.values.email}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            inputclass={
+                            className={
                                 formik.errors.email && formik.touched.email
                                     ? 'form-control mt-1 is-invalid'
                                     : 'form-control mt-1'}
@@ -110,7 +109,7 @@ const LoginPage = () => {
                             value={formik.values.password}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            inputclass={
+                            className={
                                 formik.errors.password && formik.touched.password
                                     ? 'form-control mt-1 is-invalid'
                                     : 'form-control mt-1'}

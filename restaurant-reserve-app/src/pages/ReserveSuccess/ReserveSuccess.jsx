@@ -24,7 +24,7 @@ const ReserveSuccess = () => {
                         type="button"
                         width="180px"
                         height="55px"
-                        onClick={() => navigate('/dashboardonreserve')}
+                        onClick={() => navigate('/dashboard')}
                     />
 
                 </div>

@@ -1,19 +1,17 @@
-import "./PrimaryButton.css"
+import "./TertiaryButton.css"
 
-const PrimaryButton = (props) => {
+const TertiaryButton = (props) => {
     return (
-        <div id="primarybutton">
+        <div id="tertiarybutton">
             <button
                 style={{ width: props.width, height: props.height, fontSize: props.fontsize }}
                 type={props.type}
                 className={props.className}
                 onClick={props.onClick}
-                data-bs-toggle={props.databstoggle}
-                data-bs-target={props.databstarget}
-                disabled={props.disabled}
+                data-bs-dismiss={props.databsdismiss}
             >{props.label}</button>
         </div>
     )
 }
 
-export default PrimaryButton
+export default TertiaryButton
