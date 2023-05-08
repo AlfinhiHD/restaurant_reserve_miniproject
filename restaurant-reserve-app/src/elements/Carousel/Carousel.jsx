@@ -33,8 +33,8 @@ const Carousel = () => {
                     <div key={slide.menu_id} className={`carousel-item ${index === 0 ? "active" : ""}`}>
                         <img style={{filter: "brightness(60%)"}} src={slide.image} className="d-block w-100" alt={`Slide ${index + 1}`} />
                         <div className="carousel-caption d-none d-md-block">
-                            <h5>{slide.menu_name}</h5>
-                            <h1 className="text-white">${slide.price}</h1>
+                            <h3>{slide.menu_name}</h3>
+                            <h5 className="text-white">${slide.price}</h5>
                         </div>
                     </div>
                 ))}

@@ -30,6 +30,25 @@ query MyQuery {
 }
 `;
 
+export const GetSelectMenu = gql`
+query MyQuery($menu_id: String) {
+  menu(where: {menu_id: {_eq: $menu_id}}) {
+    image
+    menu_id
+    menu_name
+    price
+  }
+}
+`;
+
+export const PostReserve = gql`
+mutation MyMutation($object: reservation_insert_input!) {
+  insert_reservation_one(object: $object) {
+    reservation_id
+  }
+}
+`
+
 // export const GetSearchMenu = gql`
 // query MyQuery(
 //   $name: String, $productname: String, $productcategory: String, $limit: Int!, $offset: Int!

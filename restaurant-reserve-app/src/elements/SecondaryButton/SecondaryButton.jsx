@@ -8,6 +8,7 @@ const SecondaryButton = (props) => {
                 type={props.type}
                 className={props.className}
                 onClick={props.onClick}
+                data-bs-dismiss={props.databsdismiss}
             >{props.label}</button>
         </div>
     )
