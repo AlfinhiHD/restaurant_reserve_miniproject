@@ -26,10 +26,10 @@ const NavbarLanding = () => {
                                 <NavItem className="nav-link" href="#" label="Our Gallery" />
                             </li>
                             <li className="nav-item me-4">
-                                <NavItem className="nav-link" href="#" label="Menu" />
+                                <NavItem className="nav-link" href="/register" label="Register" />
                             </li>
                             <li className="nav-item me-2">
-                                <NavItem className="nav-link" href="#" label="Login" />
+                                <NavItem className="nav-link" href="/" label="Login" />
                             </li>
                         </ul>
                     </div>
