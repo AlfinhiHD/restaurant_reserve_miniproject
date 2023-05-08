@@ -78,3 +78,11 @@ query MyQuery($userid: String, $reservation_id: String) {
   }
 }
 `;
+
+export const DeleteResevation = gql`
+mutation MyMutation($reservation_id: String!) {
+  delete_reservation_by_pk(reservation_id: $reservation_id) {
+    reservation_id
+  }
+}
+`

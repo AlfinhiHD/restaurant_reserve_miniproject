@@ -28,7 +28,7 @@ const OnLogin = () => {
                     <Routes>
                         <Route element={<PrivateRoute />}>
                             <Route path="/dashboard" element={<Dashboard />} />
-                            <Route path="/dashboarddetails" element={<DashboardDetails />} />
+                            <Route path="/dashboarddetails/:reservation_id" element={<DashboardDetails />} />
                             <Route path="/reservesuccess" element={<ReserveSuccess />} />
                             <Route path="/reserveform" element={<ReserveFormPage />} />
                             <Route path="/confirmation" element={<ConfirmationPage />} />

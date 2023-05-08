@@ -57,6 +57,7 @@ const Dashboard = () => {
                                                     name={data.reserve_name}
                                                     date={data.date}
                                                     time={data.time}
+                                                    reservation_id={data.reservation_id}
                                                 />
                                             </div>
                                         </div>

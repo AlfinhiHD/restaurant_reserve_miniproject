@@ -16,7 +16,7 @@ const DashboardReserveInfo = (props) => {
                 width="80px"
                 height="40px"
                 fontsize="15px"
-                onClick={() => navigate('/dashboarddetails')}
+                onClick={() => navigate(`/dashboarddetails/${props.reservation_id}`)}
             />
         </div>
     )
