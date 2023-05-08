@@ -1,8 +1,6 @@
-import { useState } from "react";
-import resto from "../../assets/resto.jpg";
 import { useQuery } from "@apollo/client";
 import { GetMenuData } from "../../helpers/gqlHasura";
-import { Oval } from 'react-loader-spinner'
+import Loader from "../Loader/Loader";
 
 const Carousel = () => {
 
@@ -11,24 +9,18 @@ const Carousel = () => {
     return (
         <>
             {loading ?
-                <Oval
-                    height={450}
+                <Loader
+                    height={550}
                     width={80}
-                    color="#FFF0DE"
-                    wrapperStyle={{}}
-                    wrapperClass=""
-                    visible={true}
-                    ariaLabel='oval-loading'
                     secondaryColor="#B1464A"
-                    strokeWidth={2}
-                    strokeWidthSecondary={2}
+                    color="#FFF0DE"
                 />
                 :
                 <div
                     id="carouselExampleCaptions"
                     className="carousel slide mt-5"
                     data-bs-ride="false"
-                    style={{ width: "1000px" }}
+                    style={{ width: "1200px" }}
                 >
                     <div className="carousel-indicators">
                         {data?.menu.map((slide, index) => (
